@@ -1,4 +1,5 @@
 ﻿$(function () {
+
     // preload audio
     var toast = new Audio('media/toast.wav');
 
@@ -10,6 +11,17 @@
         toast.currentTime = 0;
         // play audio
         toast.play();
+
+        // display name and discount code
+        $('#product').html($(this).data('product'));
+        $('#code').html($(this).data('code'));
         $('#toast').toast({ autohide: false }).toast('show');
+
+        // escape to close to toast box
+        $(document).on('keyup', function (e) {
+            if (e.key === "Escape") {
+                $('#toast').toast('hide');
+            }
+        });
     });
 });
