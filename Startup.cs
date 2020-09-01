@@ -25,6 +25,7 @@ namespace bootstrap_mod1
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
         }
     }
